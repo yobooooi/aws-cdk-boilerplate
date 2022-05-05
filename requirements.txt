@@ -1,0 +1,14 @@
+aws-cdk-lib==2.15.0
+constructs==10.0.79
+aws-cdk.aws-servicecatalog-alpha==2.15.0a0
+aws-cdk.aws-glue-alpha==2.15.0a0
+cdk-nag==2.9.2
+flake8
+black
+marshmallow
+mkdocs-material
+mkdocs-literate-nav
+mkdocstrings
+mkdocstrings-python
+mkdocs-gen-files
+coverage
