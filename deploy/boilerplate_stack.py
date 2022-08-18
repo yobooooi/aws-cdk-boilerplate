@@ -23,7 +23,7 @@ class DynamoDBTable(Stack):
 
         ddb_table.DynamoDBConstruct(
             self,
-            resource_id = stack_id,
+            stack_id,
         )
 
 class LambdaFunction(Stack):
@@ -41,5 +41,5 @@ class LambdaFunction(Stack):
 
         lambda_function.LambdaFunction(
             self,
-            resource_id = stack_id,
+            stack_id,
         )
