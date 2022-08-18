@@ -21,7 +21,7 @@ class LambdaFunction(Construct):
     def __init__(
         self,
         scope: Construct,
-        resource_id: str,
+        id: str,
         **kwargs,
     ):
         """
@@ -38,7 +38,7 @@ class LambdaFunction(Construct):
 
         _lambda.Function(
             self,
-            f"{project_parameters.GLOBAL_NAME}-{resource_id}",
+            f"{project_parameters.GLOBAL_NAME}-{id}",
             runtime=_lambda.Runtime.NODEJS_14_X,
             handler="index.handler",
             code=_lambda.Code.from_inline(

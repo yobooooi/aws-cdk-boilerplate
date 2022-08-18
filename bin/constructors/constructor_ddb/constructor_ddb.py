@@ -20,7 +20,7 @@ class DynamoDBConstruct(Construct):
     def __init__(
         self,
         scope: Construct,
-        resource_id: str,
+        id: str,
         **kwargs,
     ):
         """
@@ -39,7 +39,7 @@ class DynamoDBConstruct(Construct):
 
         ddb_table = aws_dynamodb.Table(
             self,
-            f"{project_parameters.GLOBAL_NAME}-{resource_id}",
+            f"{project_parameters.GLOBAL_NAME}-{id}",
             partition_key={
                 "name": "Id",
                 "type": aws_dynamodb.AttributeType.STRING,
