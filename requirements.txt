@@ -12,3 +12,5 @@ mkdocstrings
 mkdocstrings-python
 mkdocs-gen-files
 coverage
+pre-commit==2.20.0
+pylint==2.14.5

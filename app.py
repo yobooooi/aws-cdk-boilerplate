@@ -1,8 +1,11 @@
+"""Implentation of custom CDK constructs"""
 import aws_cdk as cdk
 
-from deploy.sample_stack import sample_cdk
+from deploy.boilerplate_stack import DynamoDBTable, LambdaFunction
 
 app = cdk.App()
-sample_cdk(app, "sample-cdk")
+
+DynamoDBTable(app, "aws-cdk-boilerplate-ddbtable")
+LambdaFunction(app, "aws-cdk-boilerplate-lambdafunction")
 
 app.synth()
