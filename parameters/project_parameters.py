@@ -3,7 +3,7 @@
 
 GLOBAL_NAME = "SampleCDK"
 SERVICE_CATALOG_PROVIDER_NAME = "SampleSC"
-SERVICE_CATALOG_PRODUCT_OWNER = "yobooooi"
+SERVICE_CATALOG_PRODUCT_OWNER = "Adan Patience"
 ENVIRONMENTS = [
     {
         "type": "nonprod",
