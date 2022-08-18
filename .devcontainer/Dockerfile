@@ -6,15 +6,13 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
 ARG NODE_VERSION="none"
 RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
+# Installation of AWS CDK CLI
+RUN npm install -g aws-cdk
+
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
 COPY ../requirements.txt /tmp/pip-tmp/
 RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
 && rm -rf /tmp/pip-tmp
-
-RUN mkdir -p /tmp/aws-cli
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/aws-cli/awscliv2.zip" \
-&& unzip /tmp/aws-cli/awscliv2.zip -d /tmp/aws-cli/ \
-&& /tmp/aws-cli/aws/install
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
